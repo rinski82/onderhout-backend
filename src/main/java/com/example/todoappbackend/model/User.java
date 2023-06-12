@@ -3,6 +3,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import com.example.todoappbackend.model.Todo;
+import jakarta.validation.constraints.NotBlank;
+
 import java.util.List;
 @Entity(name = "users")
 //@JsonIgnoreProperties({ "id" })
@@ -10,6 +12,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+    @NotBlank
     String username;
     String password;
     String emailadres;

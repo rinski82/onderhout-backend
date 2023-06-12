@@ -1,7 +1,9 @@
 package com.example.todoappbackend.controllers;
 
+import com.example.todoappbackend.model.Todo;
 import com.example.todoappbackend.model.User;
 import com.example.todoappbackend.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +17,12 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/user")
-    User save(@RequestBody User user) {
-        return userService.save(user);
+    User save(@Valid @RequestBody User user) {
+        if (user.getUsername() != null)
+            return userService.save(user);
+        else
+            throw new IllegalArgumentException("user not valid");
     }
-
     @GetMapping("/user")
     Iterable<User> findAll() {
         return userService.findAll();

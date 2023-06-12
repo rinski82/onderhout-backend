@@ -1,0 +1,7 @@
+[{"id":1, "emailadres":"rien@todo.uk", "password":"geheim", "username":"rinus", "fullname":"Rien Heule", "initials":"RH"},
+ {"id":2, "emailadres":"corien@paris.la", "password":"secret", "username":"corien", "fullname":"Corien Heslinga", "initials":"CH"},
+ {"id":4, "emailadres":"harlo@mijn.ik", "password":"mysterie", "username":"harlo", "fullname":"Harlo Parlo", "initials":"HP"},
+ {"id":5, "emailadres":"alexi@gresno.wt", "password":"vjetsnov", "username":"pjotr", "fullname":"Pjotr V\u00f6llnietschers", "initials":"PV"},
+ {"id":6, "emailadres":"charles@germ.any", "password":"minimum", "username":"karl", "fullname":"Karl Groot", "initials":"KG"},
+ {"id":7, "emailadres":"pogo@snitzels.ru", "password":"geheimeniss", "username":"us01ape3", "fullname":"Katrien Trommel", "initials":"KT"},
+ {"id":9, "emailadres":"sh5rthdfgsd", "password":"zxcef", "username":"cfdasdfsadfczasdfac", "fullname":"ssf354 s", "initials":"asd"}]

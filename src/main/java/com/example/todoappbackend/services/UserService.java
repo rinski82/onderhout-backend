@@ -10,4 +10,7 @@ public interface UserService extends CrudRepository<User, Integer> {
     @Query("select u from users u where u.id = :id")
     Iterable<User> findById(@Param("id") int id);
 
+    @Query("select u from users u order by u.id desc")
+    Iterable<User> findAll();
+
 }

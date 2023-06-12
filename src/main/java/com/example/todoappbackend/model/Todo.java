@@ -2,6 +2,9 @@ package com.example.todoappbackend.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
+import java.util.Date;
 
 @Entity(name="todo")
 //@JsonIgnoreProperties({ "id" })
@@ -9,13 +12,15 @@ public class Todo {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     int id;
+    @NotBlank
     String task;
-    String category;
+    Boolean plannedtype;
+    String context;
     String priority;
     //@ManyToOne
     //@JsonManagedReference(value = "owner")
     String owner;
-    String due;
+    Date duedate;
     String locationxy;
     String description;
     String status;
@@ -36,9 +41,13 @@ public class Todo {
         this.task = task;
     }
 
-    public String getCategory() { return category; }
+    public String getContext() {
+        return context;
+    }
 
-    public void setCategory(String category) { this.category = category; }
+    public void setContext(String context) {
+        this.context = context;
+    }
 
     public String getPriority() { return priority; }
 
@@ -50,9 +59,9 @@ public class Todo {
         this.owner = owner;
     }
 
-    public String getDue() { return due; }
+    public Date getDuedate() { return duedate; }
 
-    public void setDue(String due) { this.due = due; }
+    public void setDuedate(Date duedate) { this.duedate = duedate; }
 
     public String getLocationxy() { return locationxy; }
 
@@ -70,5 +79,11 @@ public class Todo {
 
     public void setStatus(String status) { this.status = status; }
 
+    public Boolean getPlannedtype() {
+        return plannedtype;
+    }
 
+    public void setPlannedtype(Boolean plannedtype) {
+        this.plannedtype = plannedtype;
+    }
 }
