@@ -1,13 +1,10 @@
 package com.example.todoappbackend.model;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
-import com.example.todoappbackend.model.Todo;
+
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.List;
 @Entity(name = "users")
-//@JsonIgnoreProperties({ "id" })
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +15,6 @@ public class User {
     String emailadres;
     String fullname;
     String initials;
-
-    //@OneToMany(mappedBy = "owner")
-    //@JsonBackReference
-    //public List<Todo> todoList;
-
     public User() {}
     public User(String username) {
         this.setUsername(username);

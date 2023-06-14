@@ -1,6 +1,7 @@
 package com.example.todoappbackend.services;
 
 import com.example.todoappbackend.model.Todo;
+import com.example.todoappbackend.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -16,10 +17,15 @@ public interface TodoService extends
     @Query("select t from todo t where t.id = :id")
     Iterable<Todo> findById(@Param("id") int id);
 
-    @Query("select t from todo t where t.owner = :owner_id")
-    Iterable<Todo> findByOwnerId(@Param("owner_id") int owner_id);
+//    @Query("select t from todo t where t.owner = :owner_id")
+//    Iterable<Todo> findByOwnerId(@Param("owner_id") int owner_id);
+
+    Iterable<Todo> findByUser(User user);
+    Iterable<Todo> findByUserUsername(String username);
+    Iterable<Todo> findByUserId(int id);
 
     @Query("select t from todo t where t.duedate = :selected_date")
     Iterable<Todo> findByDuedate(@Param("selected_date") Date selected_date);
+
 }
 

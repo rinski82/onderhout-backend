@@ -1,5 +1,5 @@
 package com.example.todoappbackend.model;
 
 public enum TodoCategory {
-    Huis, Tuin, Keuken, Kantoor, Schuur, Tunnelkas, Groentetuin, Bonustuin
+    Huis, Tuin, Keuken, Kantoor, Schuur, Kas, Groentetuin, Bonustuin
 }
